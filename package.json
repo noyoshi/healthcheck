@@ -1,0 +1,23 @@
+{
+  "name": "healthcheck",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noyoshi/healthcheck.git"
+  },
+  "author": "Noah Yoshida",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noyoshi/healthcheck/issues"
+  },
+  "homepage": "https://github.com/noyoshi/healthcheck#readme"
+}
