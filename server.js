@@ -3,17 +3,19 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const host = "0.0.0.0";
-const port = 6000;
+const settings = require("./settings.js");
+// TODO figure out a better port to use (weird ports don't work in Windows?)
+const host = settings.host;
+const port = settings.port;
 
 app.use(express.json());
 
 CURRENT_DATA = {};
 
+// Should recieve updated data every 2 seconds or so
 app.post("/receiver", cors(), function(req, res) {
   CURRENT_DATA = req.body;
   console.log(req.body);
-  // res.send({status: "success"});
   res.json({
     status: "success", 
     body: req.body
@@ -21,6 +23,7 @@ app.post("/receiver", cors(), function(req, res) {
 });
 
 app.get("/", cors(), function(req, res) {
+  // Pass the data along to the frontend
   res.send(CURRENT_DATA);
 });
 
